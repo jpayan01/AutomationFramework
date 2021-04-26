@@ -1,19 +1,17 @@
 @ApplicationLogin
 Feature: Application Login
 
-#  Background: Setup browser
-#    Given User validates the browser
-#    When Browser is triggered
-#    Then Check browser is displayed
+  Background: Setup browser
+    Given User navigates to Green cart landing page
 
   @LoginSuccess
-  Scenario: Login to homepage successfully
-    Given User navigates to Green cart landing page
-    When User searches "cucumber" in vegetables section
-    Then User sees "cucumber" on screen
+  Scenario: Search for a cucumber in product page
+    Given User searches "cucumber" in vegetables section
+    When User adds item to the cart
+    Then User sees shopping cart updated accordingly
 
-#  @LoginFailed
-#  Scenario: Login to homepage incorrectly
-#    Given User navigates to Green cart landing page
-#    When User provides "marcela" credentials
-#    Then User sees "message" on screen
+  @LoginFailed
+  Scenario: Search for carrots in product page
+    Given User navigates to Green cart landing page
+    When User searches "carrots" in vegetables section
+    Then User sees "carrots" on screen
