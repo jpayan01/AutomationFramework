@@ -1,4 +1,4 @@
-package pages;
+package interview_questions;
 
 public class FindMissingNumber {
     public static void main(String[] args) {
